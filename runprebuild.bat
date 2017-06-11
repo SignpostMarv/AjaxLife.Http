@@ -31,7 +31,7 @@ if defined ValueName (
     @echo Value Type = %ValueType%
     @echo Value Value = %ValueValue%
     @echo Creating compile.bat
-    @echo %ValueValue%\msbuild AjaxLife.sln > compile.bat
+    @echo %ValueValue%\msbuild AjaxLife.Http.sln > compile.bat
 ) else (
     @echo %KEY_NAME%\%VALUE_NAME% not found.
     @echo Not creating compile.bat
