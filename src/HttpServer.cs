@@ -1,4 +1,5 @@
 ﻿using HttpServer;
+using HttpServer.HttpModules;
 using IpAddress = System.Net.IPAddress;
 using System;
 
@@ -31,9 +32,9 @@ namespace AjaxLife.Http
             server.Stop();
         }
 
-        public void OnRequest(object source, RequestEventArgs args)
+        public void AddHttpModule(HttpModule module)
         {
-            Console.WriteLine("request recieved");
+            server.Add(module);
         }
     }
 }
