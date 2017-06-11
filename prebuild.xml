@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<Prebuild version="1.10" xmlns="http://dnpb.sourceforge.net/schemas/prebuild-1.10.xsd">
+  <Solution activeConfig="Debug" name="AjaxLife.Http" path="./">
+    <Configuration name="Debug">
+      <Options>
+        <CompilerDefines>TRACE;DEBUG</CompilerDefines>
+        <OptimizeCode>false</OptimizeCode>
+        <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+        <AllowUnsafe>true</AllowUnsafe>
+        <WarningLevel>4</WarningLevel>
+        <WarningsAsErrors>false</WarningsAsErrors>
+        <SuppressWarnings/>
+        <OutputPath>bin</OutputPath>
+        <DebugInformation>true</DebugInformation>
+        <IncrementalBuild>true</IncrementalBuild>
+        <NoStdLib>false</NoStdLib>
+      </Options>
+    </Configuration>
+    <Configuration name="Release">
+      <Options>
+        <CompilerDefines>TRACE</CompilerDefines>
+        <OptimizeCode>true</OptimizeCode>
+        <CheckUnderflowOverflow>false</CheckUnderflowOverflow>
+        <AllowUnsafe>true</AllowUnsafe>
+        <WarningLevel>4</WarningLevel>
+        <WarningsAsErrors>false</WarningsAsErrors>
+        <SuppressWarnings/>
+        <OutputPath>bin</OutputPath>
+        <DebugInformation>false</DebugInformation>
+        <IncrementalBuild>true</IncrementalBuild>
+        <NoStdLib>false</NoStdLib>
+      </Options>
+    </Configuration>
+    <Project frameworkVersion="v4_5" name="AjaxLife.Http" path="./" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>bin/</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>bin/</OutputPath>
+        </Options>
+      </Configuration>
+      <ReferencePath>assemblies/opensim-libs/HttpServer/trunk/HttpServer/bin/Debug/</ReferencePath>
+      <ReferencePath>assemblies/bc-sharp/crypto/bin/Debug/lib/net20/</ReferencePath>
+      <Reference name="System" />
+      <Reference name="BouncyCastle" />
+      <Reference name="HttpServer_OpenSim" />
+      <Files>
+        <Exclude pattern="bin"/>
+        <Match pattern="src/*.cs" recurse="false"/>
+        <Match pattern="assemblies/bc-sharp/crypto/bin/Debug/lib/net20/BouncyCastle.dll" recurse="false" buildAction="Copy" copyToOutput="PreserveNewest" destination="$(OutputPath)"/>
+        <Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/bin/Debug/HttpServer_OpenSim.dll" recurse="false" buildAction="Copy" copyToOutput="PreserveNewest" destination="$(OutputPath)"/>
+      </Files>
+    </Project>
+  </Solution>
+</Prebuild>

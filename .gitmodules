@@ -1,0 +1,6 @@
+[submodule "assemblies/opensim-libs"]
+	path = assemblies/opensim-libs
+	url = https://github.com/SignpostMarv/opensim-libs.git
+[submodule "assemblies/bc-sharp"]
+	path = assemblies/bc-sharp
+	url = https://github.com/SignpostMarv/bc-csharp.git
