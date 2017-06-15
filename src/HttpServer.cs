@@ -1,5 +1,6 @@
 ﻿using HttpServer;
 using HttpServer.HttpModules;
+using IRule = HttpServer.Rules.IRule;
 using IpAddress = System.Net.IPAddress;
 using System;
 
@@ -35,6 +36,11 @@ namespace AjaxLife.Http
         public void AddHttpModule(HttpModule module)
         {
             server.Add(module);
+        }
+
+        public void AddRule(IRule rule)
+        {
+            server.Add(rule);
         }
     }
 }
