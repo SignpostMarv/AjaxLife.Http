@@ -13,44 +13,6 @@ namespace AjaxLife.HttpRules
 
         private string PathToFileOnServer;
 
-        public override string Charset
-        {
-            get
-            {
-                string res = "";
-
-                switch (Path.GetExtension(PathToFileOnDisk))
-                {
-                    case "css":
-                    case "txt":
-                    case "js":
-                        res = "; charset=utf-8";
-                        break;
-                }
-
-                return res;
-            }
-        }
-
-        public override string ContentType {
-            get
-            {
-                string res = "text/plain";
-
-                switch (Path.GetExtension(PathToFileOnDisk))
-                {
-                    case "css":
-                        res = "text/css";
-                        break;
-                    case "js":
-                        res = "application/javascript";
-                        break;
-                }
-
-                return res + Charset;
-            }
-        }
-
         private string CacheControl { get; set; }
 
         private bool SendCookies { get; set; }
@@ -90,12 +52,10 @@ namespace AjaxLife.HttpRules
             {
                 throw new Exception("File does not exist on disk!");
             }
-            else if (request.Headers["If-None-Match"] != null)
-            {
 
-            }
-
-            response.ContentType = ContentType;
+            response.ContentType = ContentTypeFromExtension(
+                Path.GetExtension(PathToFileOnDisk)
+            );
             FileInfo info = new FileInfo(PathToFileOnDisk);
             response.ContentLength = info.Length;
             Stream stream = new FileStream(PathToFileOnDisk, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, FileOptions.SequentialScan);

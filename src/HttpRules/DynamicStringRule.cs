@@ -9,39 +9,22 @@ namespace AjaxLife.HttpRules
     {
         private List<string> PathsToFileOnServer = new List<string>();
 
-        private string _charset;
-
-        public override string Charset
-        {
-            get
-            {
-                return _charset;
-            }
-        }
-
-        private string _contentType;
-
-        public override string ContentType
-        {
-            get
-            {
-                return _contentType;
-            }
-        }
+        public string ContentType { get; private set; }
 
         public DynamicStringRule(
             string pathToFileOnServer,
-            string charset, 
             string contentType
-        ) : this(new List<string> { pathToFileOnServer }, charset, contentType)
+        ) : this(new List<string> { pathToFileOnServer }, contentType)
         {
         }
 
-        public DynamicStringRule(List<string> pathsToFileOnServer, string charset, string contentType)
+        public DynamicStringRule(
+            List<string> pathsToFileOnServer,
+            string contentType
+        )
         {
             PathsToFileOnServer = pathsToFileOnServer;
-            _charset = charset;
-            _contentType = contentType;
+            ContentType = contentType;
         }
 
         public override bool CanHandleRequest(IHttpRequest request)
