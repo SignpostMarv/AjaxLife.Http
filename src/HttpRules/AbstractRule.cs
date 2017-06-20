@@ -56,6 +56,10 @@ namespace AjaxLife.HttpRules
                 case ".png":
                     res = "image/png";
                     break;
+                case "wav":
+                case ".wav":
+                    res = "audio/wav";
+                    break;
             }
 
             return res + CharsetFromExtension(extension);
