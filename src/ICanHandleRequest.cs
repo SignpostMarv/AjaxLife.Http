@@ -2,7 +2,7 @@
 
 namespace AjaxLife.Http
 {
-    interface ICanHandleRequest
+    public interface ICanHandleRequest
     {
         bool CanHandleRequest(IHttpRequest request);
     }
