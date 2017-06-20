@@ -5,7 +5,7 @@ using System;
 
 namespace AjaxLife.HttpRules
 {
-    public abstract class AbstractRule : IRule, ICanHandleRequest
+    public abstract class AbstractFilesystemRule : IRule, ICanHandleRequest
     {
         public abstract bool CanHandleRequest(IHttpRequest request);
 

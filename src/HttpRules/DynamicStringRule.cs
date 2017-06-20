@@ -5,7 +5,7 @@ using System.IO;
 
 namespace AjaxLife.HttpRules
 {
-    public abstract class DynamicStringRule : AbstractRule
+    public abstract class DynamicStringRule : AbstractFilesystemRule
     {
         private List<string> PathsToFileOnServer = new List<string>();
 

@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace AjaxLife.HttpRules
 {
-    public class DirectoryRule : AbstractRule
+    public class DirectoryRule : AbstractFilesystemRule
     {
         private string PathToDirectoryOnDisk;
 
