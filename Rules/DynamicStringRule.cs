@@ -1,9 +1,7 @@
 ﻿using HttpServer;
-using System;
 using System.Collections.Generic;
-using System.IO;
 
-namespace AjaxLife.HttpRules
+namespace AjaxLife.Http.Rules
 {
     public abstract class DynamicStringRule : AbstractFilesystemRule
     {

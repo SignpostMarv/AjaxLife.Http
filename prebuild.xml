@@ -49,8 +49,10 @@
       <Reference name="HttpServer_OpenSim" />
       <Files>
         <Exclude pattern="bin"/>
-        <Match pattern="src/*.cs" recurse="false"/>
-        <Match pattern="src/HttpRules/*.cs" recurse="false"/>
+        <Match pattern="./HttpServer.cs" recurse="false"/>
+        <Match pattern="./HttpsServer.cs" recurse="false"/>
+        <Match pattern="./ICanHandleRequest.cs" recurse="false"/>
+        <Match pattern="./Rules/*.cs" recurse="false"/>
         <Match pattern="assemblies/bc-sharp/crypto/bin/Debug/lib/net20/BouncyCastle.dll" recurse="false" buildAction="Copy" copyToOutput="PreserveNewest" destination="$(OutputPath)"/>
         <Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/bin/Debug/HttpServer_OpenSim.dll" recurse="false" buildAction="Copy" copyToOutput="PreserveNewest" destination="$(OutputPath)"/>
       </Files>

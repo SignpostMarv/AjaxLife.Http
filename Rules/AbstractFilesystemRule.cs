@@ -1,9 +1,8 @@
-﻿using AjaxLife.Http;
-using HttpServer;
+﻿using HttpServer;
 using IRule = HttpServer.Rules.IRule;
 using System;
 
-namespace AjaxLife.HttpRules
+namespace AjaxLife.Http.Rules
 {
     public abstract class AbstractFilesystemRule : IRule, ICanHandleRequest
     {

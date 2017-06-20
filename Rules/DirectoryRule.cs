@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 
-namespace AjaxLife.HttpRules
+namespace AjaxLife.Http.Rules
 {
     public class DirectoryRule : AbstractFilesystemRule
     {
