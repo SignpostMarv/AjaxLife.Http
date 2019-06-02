@@ -42,10 +42,10 @@
           <OutputPath>bin/</OutputPath>
         </Options>
       </Configuration>
-      <ReferencePath>assemblies/opensim-libs/HttpServer/trunk/HttpServer/bin/Debug/</ReferencePath>
       <ReferencePath>assemblies/bc-sharp/crypto/bin/Debug/lib/net20/</ReferencePath>
       <Reference name="System" />
       <Reference name="BouncyCastle" />
+      <Reference name="HttpServer" />
       <Reference name="HttpServer_OpenSim" />
       <Files>
         <Exclude pattern="bin"/>
@@ -54,8 +54,100 @@
         <Match pattern="./ICanHandleRequest.cs" recurse="false"/>
         <Match pattern="./Rules/*.cs" recurse="false"/>
         <Match pattern="assemblies/bc-sharp/crypto/bin/Debug/lib/net20/BouncyCastle.dll" recurse="false" buildAction="Copy" copyToOutput="PreserveNewest" destination="$(OutputPath)"/>
-        <Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/bin/Debug/HttpServer_OpenSim.dll" recurse="false" buildAction="Copy" copyToOutput="PreserveNewest" destination="$(OutputPath)"/>
       </Files>
     </Project>
+	<Project frameworkVersion="v4_5" name="HttpServer" path="./" type="Library">
+      <Configuration name="Debug">
+        <Options>
+          <OutputPath>bin/</OutputPath>
+        </Options>
+      </Configuration>
+      <Configuration name="Release">
+        <Options>
+          <OutputPath>bin/</OutputPath>
+        </Options>
+      </Configuration>
+	  <Reference name="System" />
+	  <Reference name="System.Data" />
+	  <Reference name="System.Web" />
+	  <Reference name="System.Xml" />
+      <Files>
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Authentication/AuthenticationModule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Authentication/BasicAuthentication.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Authentication/DigestAuthentication.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Check.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ClientAcceptedEventArgs.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ComponentProvider.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ContentTypes.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ContextTimeoutManager.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ExceptionHandler.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Exceptions/BadRequestException.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Exceptions/ForbiddenException.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Exceptions/HttpException.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Exceptions/InternalServerException.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Exceptions/NotFoundException.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Exceptions/UnauthorizedException.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/FormDecoders/FormDecoderProvider.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/FormDecoders/HttpMultipart.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/FormDecoders/IFormDecoder.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/FormDecoders/MultipartDecoder.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/FormDecoders/UrlDecoder.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/FormDecoders/XmlDecoder.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/FormHelper.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/GetIdTitle.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/Implementations/PrototypeImp.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/JSHelper.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/ObjectForm.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/ResourceInfo.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/ResourceManager.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/WebHelper.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Helpers/XmlHelper.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpClientContext.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpContextFactory.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpFile.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpForm.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpHelper.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpInput.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpInputItem.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpListener.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpListenerBase.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpModules/FileModule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpModules/HttpModule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpModules/HttpModuleExceptionEventArgs.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpModules/ResourceFileModule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpModules/ReverseProxyModule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpModules/WebSiteModule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpParam.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpRequest.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpResponse.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/HttpServer.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/IComponentProvider.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/IHttpClientContext.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/IHttpContextHandler.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/IHttpRequest.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/IHttpRequestParser.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/IHttpResponse.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ILogWriter.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/LocklessQueue.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Method.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Parser/BodyEventArgs.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Parser/HeaderEventArgs.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Parser/HttpRequestParser.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Parser/RequestLineEventArgs.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Parser/RequestParserFactory.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Properties/AssemblyInfo.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/RequestCookie.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/RequestCookies.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/RequestQueue.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ResponseCookie.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/ResponseCookies.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Rules/IRule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Rules/RedirectRule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Rules/RegexRedirectRule.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Sessions/IHttpSession.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Sessions/IHttpSessionStore.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Sessions/MemorySession.cs" />
+<Match pattern="assemblies/opensim-libs/HttpServer/trunk/HttpServer/Sessions/MemorySessionStore.cs" />      </Files>
+	</Project>
   </Solution>
 </Prebuild>
