@@ -121,7 +121,7 @@ namespace AjaxLife.Http
             PrivateKeyInfo info = PrivateKeyInfoFactory.CreatePrivateKeyInfo(keypair.Private);
             X509Certificate2 x509 = new X509Certificate2(genCert.Generate(issuerPrivateKey, random).GetEncoded());
 
-            Asn1Sequence seq = (Asn1Sequence)Asn1Object.FromByteArray(info.PrivateKey.GetDerEncoded());
+            Asn1Sequence seq = (Asn1Sequence)Asn1Object.FromByteArray(info.ParsePrivateKey().GetDerEncoded());
 
             if (seq.Count != 9)
             {
